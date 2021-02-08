@@ -20,6 +20,8 @@ Clone this repository to a local directory on your machine:
 ```
 git clone https://github.com/LHeen08/Insta-Followers-Selenium.git
 ```
+Then cd into that directory that you just cloned
+
 <br />
 
 #### Start the docker selenium container
