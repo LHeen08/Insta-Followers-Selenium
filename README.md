@@ -22,7 +22,7 @@ git clone https://github.com/LHeen08/Instagram-Selenium-Follower-Check.git
 ```
 <br />
 
-####Start the docker selenium container
+#### Start the docker selenium container
 Run this command to start the selenium web driver container:
 ```
 docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-firefox:4.0.0-beta-1-prerelease-20210207
