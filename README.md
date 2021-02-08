@@ -67,11 +67,17 @@ Let it run, if you have quite a few followers and following it may take a while 
 
 ### b. Python on local machine
 Again if you wish to have a more neat output to a file, you need Python on your local machine (refer to Optional section in README)
-```
-python3 bot.py
-```
+<br />
+
+Install the requirements for the project
 ```
 pip3 install -r ./requirements.txt
+```
+<br />
+
+Run the python file
+```
+python3 bot.py
 ```
 After successfully running this command, check the output.txt file for a neat readable output
 
