@@ -18,7 +18,7 @@ Instagram bot, using selenium, that checks users who don't follow you back, and 
 # Installation
 Clone this repository to a local directory on your machine:
 ```
-git clone https://github.com/LHeen08/Instagram-Selenium-Follower-Check.git
+git clone https://github.com/LHeen08/Insta-Followers-Selenium.git
 ```
 <br />
 
