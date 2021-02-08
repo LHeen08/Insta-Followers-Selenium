@@ -3,8 +3,8 @@ Instagram bot, using selenium, that checks users who don't follow you back, and 
 
 | :warning: WARNING          |
 |:---------------------------|
-| This is not recommended to be used when you have A LOT of followers. It is very slow as followers increase because of selenium. This was created to practice using selenium.
-|This will not work with two factor authentication enabled, it must be disabled to allow sign in.
+| This is not recommended to be used when you have A LOT of followers. It is very slow as followers increase because of selenium. This was created to practice using selenium.|
+|This will not work with two factor authentication enabled, it must be disabled to allow sign in.|
 |:exclamation: I am not responsible for any damages. Use at your own risk. Look through the code if you feel uneasy or don't use it...|
 
 # Requirements
@@ -63,7 +63,7 @@ docker run followerbot
 ```
 Let it run, if you have quite a few followers and following it may take a while (refer to warning at top of README)
 
-###b. Python on local machine
+### b. Python on local machine
 Again if you wish to have a more neat output to a file, you need Python on your local machine (refer to Optional section in README)
 ```
 python3 bot.py
