@@ -35,7 +35,7 @@ docker ps
 
 Once the selenium docker container is up and running, navigate to localhost:4444 on your browser
 - Copy the *URI:* IP address
-- Open the *Input_file.py* (with any text editor) from this project that you had previously cloned to your machine
+- Open the *Input_file.py* (with any text editor) from this project
   - Paste the *URI*: IP address that you had previously copied in the *connection_url* variable (without the brackets { } )
     
 ```
