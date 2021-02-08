@@ -70,6 +70,9 @@ Again if you wish to have a more neat output to a file, you need Python on your 
 ```
 python3 bot.py
 ```
+```
+pip3 install -r ./requirements.txt
+```
 After successfully running this command, check the output.txt file for a neat readable output
 
 <br />
