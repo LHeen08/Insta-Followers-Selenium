@@ -69,6 +69,14 @@ Let it run, if you have quite a few followers and following it may take a while 
 Again if you wish to have a more neat output to a file, you need Python on your local machine (refer to Optional section in README)
 <br />
 
+It is necessary to change the connection url when running python on the local machine
+  - Change the connection_url to http://localhost:4444
+```
+connection_url = "http://localhost:4444"
+```
+
+<br />
+
 Install the requirements for the project
 ```
 pip3 install -r ./requirements.txt
