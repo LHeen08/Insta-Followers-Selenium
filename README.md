@@ -1,4 +1,7 @@
-# Instagram Followers Checker bot :robot:
+<h1 align="center">
+Instagram Followers Checker bot :robot:
+</h1>
+
 Instagram bot, using selenium, that checks users who don't follow you back, and users who you don't follow back.
 
 |<p align="center"> :warning: WARNING          </p>|
