@@ -1,11 +1,17 @@
-# Instagram Followers Check
+# Instagram Followers Checker bot :robot:
 Instagram bot, using selenium, that checks users who don't follow you back, and users who you don't follow back.
 
-| :warning: WARNING          |
+|<p align="center"> :warning: WARNING          </p>|
 |:---------------------------|
-| This is not recommended to be used when you have A LOT of followers. It is very slow as followers increase because of selenium. This was created to practice using selenium.|
-| This will not work with two factor authentication enabled, it must be disabled to allow sign in.|
-|:exclamation::exclamation::exclamation:  I am not responsible for any damages. Use at your own risk. Look through the code if you feel uneasy or don't use it...|
+|1. This is not recommended to be used when you have A LOT of followers. It is very slow as followers increase because of selenium. This was created to practice using selenium.|
+|2. This will not work with two factor authentication enabled, it must be disabled to allow sign in.|
+<br />
+
+##### :exclamation::exclamation::exclamation:I am not responsible for any damages. Use at your own risk. Look through the code if you feel uneasy or don't use it...
+<br />
+
+***The terminal commands provided are for unix/linux. If on Windows they will differ but will be somewhat similar, refer to correct docuemtation accordingly.***
+<br />
 
 # Requirements
 - Please follow the appropriate instructions on how to install docker on your machine: 
