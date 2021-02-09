@@ -12,8 +12,9 @@ Instagram bot, using selenium, that checks users who don't follow you back, and 
   - [Docker setup](https://docs.docker.com/get-docker/)
   
 ## Optional
-- If you wish to view the output lists on a easier to read text file (compared to seeing the list on the terminal), then you will need Python 3.8 on your local machine
+- If you wish to view the output lists on a easier to read text file (compared to seeing the list on the terminal), then you will need Python 3.8 and pip3 on your local machine
   - How to [Install](https://realpython.com/installing-python/) and [Run](https://realpython.com/run-python-scripts/) Python
+  - How to [Install](https://pip.pypa.io/en/stable/installing/) pip3
   
 # Installation
 Clone this repository to a local directory on your machine:
