@@ -104,7 +104,7 @@ docker ps
 ```
 
 Stop unwanted containers (replace {Container ID} with the correct ID of container found with docker ps)
-  - [Help](https://docs.docker.com/engine/reference/commandline/stop/)
 ```
 docker stop {CONTAINER ID}
 ```
+  - [Help](https://docs.docker.com/engine/reference/commandline/stop/) stopping docker containers
