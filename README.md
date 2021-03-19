@@ -13,7 +13,7 @@ Instagram bot, using selenium, that checks users who don't follow you back, and 
 ##### :exclamation::exclamation::exclamation:I am not responsible for any damages. Use at your own risk. Look through the code if you feel uneasy or don't use it...
 <br />
 
-***The terminal commands provided are for unix/linux. If on Windows they will differ but will be somewhat similar, refer to correct docuemtation accordingly.***
+***The terminal commands provided are for unix/linux. If on Windows they will differ but will be somewhat similar, refer to correct documentation accordingly.***
 <br />
 
 # Requirements
@@ -75,7 +75,7 @@ docker run followerbot
 Let it run, if you have quite a few followers and following it may take a while (refer to warning at top of README)
 
 ### b. Python on local machine
-Again if you wish to have a more neat output to a file, you need Python on your local machine (refer to Optional section in README)
+Again if you wish to have a neater output to a file, you need Python on your local machine (refer to Optional section in README)
 <br />
 
 It is necessary to change the connection url when running python on the local machine
