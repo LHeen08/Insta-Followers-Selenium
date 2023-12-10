@@ -1,0 +1,4 @@
+Notes on what is needed for running for dev
+ - need to install virtual env requirements for selenium
+ - need the chrome web driver
+ 
