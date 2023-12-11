@@ -5,7 +5,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from src.input_file import username, password
+from input_file import username, password
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
@@ -67,10 +67,15 @@ def get_followers(driver):
     print(f"Getting all followers for {username}")
 
     users = set() # set to hold followers
-    
+
+    # Find following elemnent 
+    followers_list_elem = WebDriverWait(driver, 15).until((EC.presence_of_element_located((By.XPATH, "(//div[contains(@class, '_aano')])"))))
+    # Now get the child element (so not the suggested users)
+    child_followers_list = followers_list_elem.find_element_by_xpath(".//div[contains(@style, 'display')][1]")
+
     while len(users) < followers_number:
-        # keep getting the list of followers as we scroll through and update the list updates as we scroll
-        followers = driver.find_elements(By.XPATH, "//a[contains(@href, '/')]")
+        # keep getting the list of following as we scroll through and update the list updates as we scroll
+        followers = child_followers_list.find_elements(By.XPATH, ".//a[contains(@href, '/')]")
 
         # With all the followers, see if they exist in the set 
         for i in followers:
@@ -111,9 +116,15 @@ def get_following(driver):
 
     users = set() # set to hold followers
 
+
+    # Find following elemnent 
+    following_list_elem = WebDriverWait(driver, 15).until((EC.presence_of_element_located((By.XPATH, "(//div[contains(@class, '_aano')])"))))
+    # Now get the child element (so not the suggested users)
+    child_following_list = following_list_elem.find_element_by_xpath(".//div[contains(@style, 'display')][1]")
+
     while len(users) < following_number:
         # keep getting the list of following as we scroll through and update the list updates as we scroll
-        following = driver.find_elements(By.XPATH, "//a[contains(@href, '/')]")
+        following = child_following_list.find_elements(By.XPATH, ".//a[contains(@href, '/')]")
 
         # With all the followers, see if they exist in the set 
         for i in following:
