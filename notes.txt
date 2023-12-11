@@ -1,4 +1,11 @@
 Notes on what is needed for running for dev
  - need to install virtual env requirements for selenium
- - need the chrome web driver
- 
+ - need the chrome web driver, and browser
+
+ - start standalone chrome - docker run -d -p 4444:4444 selenium/standalone-chrome
+
+
+
+ - To build docker image: sudo docker build -t followerbot .
+ - To run docker with unbuffered output: sudo docker run followerbot python -u src/bot.py
+ - 
