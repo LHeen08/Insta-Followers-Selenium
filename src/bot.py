@@ -172,11 +172,11 @@ if __name__ == '__main__':
 
         # Write the lists to the file within the src directory
         with open("not_following.txt", 'w') as file:
-            file.write(f"Users not following you: Count - {len(not_following_you)}\n")
+            file.write(f"Users not following you back: Count - {len(not_following_you)}\n")
             file.write("------------------------------------------------------------\n")
             file.write("\n".join(not_following_you))
             file.write("\n------------------------------------------------------------")
-            file.write(f"\n\n\nUsers you are not following: Count - {len(not_following)}\n")
+            file.write(f"\n\n\nUsers you are not following back: Count - {len(not_following)}\n")
             file.write("------------------------------------------------------------\n")
             file.write("\n".join(not_following))
             file.write("\n------------------------------------------------------------\n")
