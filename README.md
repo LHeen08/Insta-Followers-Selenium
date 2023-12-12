@@ -41,7 +41,7 @@ The process is the same for each OS, just the names will be different
     ```
     - Windows
     ```
-    setup.ps1
+    .\setup.ps1
     ```
 3. Once the docker-standalone-chrome container is running, navigate to [localhost:4444](http://localhost:4444) and copy the "URI" that is listed on the selenium grid box
 4. With that copied URI, go to the cloned directory and open the "input_file.py" and paste it into the "connection_url".
@@ -63,7 +63,7 @@ The process is the same for each OS, just the names will be different
     ```
     - Windows
     ```
-    run.ps1
+    .\run.ps1
     ```
 8. Let the container run and you should see a file appear called: not_following.txt
   - If you open that file you should be able to see all users that dont follow you and all users that you dont follow
@@ -74,5 +74,5 @@ The process is the same for each OS, just the names will be different
     ```
     - Windows
     ```
-    remove_containers.ps1
+    .\remove_containers.ps1
     ```
