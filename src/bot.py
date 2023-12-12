@@ -11,20 +11,6 @@ from input_file import username, password, connection_url
 from selenium.webdriver.chrome.options import Options
 
 
-
-options = Options()
-options.add_argument("--headless")
-options.add_argument('--no-sandbox')
-options.add_argument("--disable-gpu")
-options.add_argument("--log-level=3")
-mobile_emulation = {
-    "userAgent": "Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/90.0.1025.166 Mobile Safari/535.19"}
-options.add_experimental_option("mobileEmulation", mobile_emulation)
-
-# driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=options)
-driver = webdriver.Remote(connection_url, options=options)
-
-
 # Log in to instagram
 def login(driver):
     driver.get("https://www.instagram.com/accounts/login") # Go to instagram login page
@@ -158,6 +144,29 @@ def get_following(driver):
 # Main driver 
 if __name__ == '__main__':
     try:
+        if connection_url == "":
+            print("Empty connection_url. Please enter a connection URL in input_file.py")
+            exit(1)
+
+        if username == "" or password == "":
+            if username == "":
+                print("Caution, empty username. If this is incorrect, add a username in input_file.py")
+            if password == "":
+                print("Caution, empty password. If this is incorrect, add a password in input_file.py")
+
+
+        # Init driver to use
+        options = Options()
+        options.add_argument("--headless")
+        options.add_argument('--no-sandbox')
+        options.add_argument("--disable-gpu")
+        options.add_argument("--log-level=3")
+        mobile_emulation = {
+            "userAgent": "Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/90.0.1025.166 Mobile Safari/535.19"}
+        options.add_experimental_option("mobileEmulation", mobile_emulation)
+        driver = webdriver.Remote(connection_url, options=options)
+
+
         login(driver)
         followers = get_followers(driver)
         following = get_following(driver)
