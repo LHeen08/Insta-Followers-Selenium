@@ -18,6 +18,7 @@ Instagram bot, using selenium, that checks users who don't follow you back, and 
 # Requirements
 - Please follow the appropriate instructions on how to install docker on your machine: 
   - [Docker setup](https://docs.docker.com/get-docker/)
+- To run the scripts listed below you need docker to be running
   
 # Installation
 Clone this repository to a local directory on your machine:
@@ -30,7 +31,7 @@ Move into that directory.
 ## Usage
 There is a scripts folder to allow simple usage of running and creating the containers.
 <br />
-You can use the .sh scripts for Linux/MacOS or use the Windows/.ps1 scripts for running on Windows.
+You can use the .sh scripts for Linux/MacOS or use the Windows/.ps1 scripts in powershell for running on Windows.
 
 The process is the same for each OS, just the names will be different
 1. Run the setup.sh (Linux/MacOS) or the setup.ps1 (Windows) to setup the docker containers
