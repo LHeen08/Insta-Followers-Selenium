@@ -1,5 +1,6 @@
 import time
 import traceback
+from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
@@ -32,7 +33,7 @@ def login(driver):
 
     # Is there a popup we need to go around?
 
-    print(f"Logging in: {username}")
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Logging in: {username}")
 
     # Get the elements to enter 
     username_input = WebDriverWait(driver, 15).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input[name='username']")))
@@ -53,6 +54,8 @@ def login(driver):
 
 # Function to get the followers
 def get_followers(driver):
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Getting followers...")
+
     driver.get(f'https://www.instagram.com/{username}/') # navigate to the user page and get the followers
     time.sleep(2)
     
@@ -61,12 +64,12 @@ def get_followers(driver):
         EC.visibility_of_element_located ((By.XPATH, "(//span[@class='_ac2a'])[2]"))
     )    
     followers_number = int(followers_element.get_attribute("title"))
-    print("Total followers: ", followers_number)  # Output followers number
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Total followers: ", followers_number)  # Output followers number
     
     
     WebDriverWait(driver, 15).until(EC.visibility_of_element_located ((By.XPATH, "//a[contains(@href, '/followers')]"))).click()
     time.sleep(2)
-    print(f"Getting all followers for {username}")
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Getting all followers for {username}")
 
     users = set() # set to hold followers
 
@@ -88,7 +91,7 @@ def get_followers(driver):
             
         # Update the progress bar based on the current set size
         progress = min(len(users) / followers_number * 100, 100)  # Calculate progress percentage
-        print(f"Progress: [{int(progress):3}%] {'=' * int(progress)}", end='\r')
+        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Progress: [{int(progress):3}%] [{'[' + '=' * int(progress) + ' ' * (100 - int(progress)) + ']':100}]")
 
         ActionChains(driver).send_keys(Keys.END).perform()
         time.sleep(1)
@@ -100,6 +103,8 @@ def get_followers(driver):
 
 # Function to get the following
 def get_following(driver):
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Getting following...")
+
     driver.get(f'https://www.instagram.com/{username}/') # navigate to the user page and get the following
     time.sleep(2)
     
@@ -109,12 +114,12 @@ def get_following(driver):
     )
     child_span_elem = following_element.find_element(By.XPATH, ".//span[contains(@class, 'html-span')]")
     following_number = int(child_span_elem.text)
-    print("Total following: ", following_number)  # Output following number
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Total following: ", following_number)  # Output following number
     
     
     WebDriverWait(driver, 15).until(EC.visibility_of_element_located ((By.XPATH, "//a[contains(@href, '/following')]"))).click()
     time.sleep(2)
-    print(f"Getting all following for {username}")
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Getting all following for {username}")
 
     users = set() # set to hold followers
 
@@ -137,8 +142,7 @@ def get_following(driver):
             
         # Update the progress bar based on the current set size
         progress = min(len(users) / following_number * 100, 100)  # Calculate progress percentage
-        print(f"Progress: [{int(progress):3}%] {'=' * int(progress)}", end='\r')
-
+        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Progress: [{int(progress):3}%] [{'[' + '=' * int(progress) + ' ' * (100 - int(progress)) + ']':100}]")
         ActionChains(driver).send_keys(Keys.END).perform()
         time.sleep(1)
 
@@ -164,13 +168,19 @@ if __name__ == '__main__':
         # Finding users in following list but not in followers list
         not_following_you = [user for user in following if user not in followers]
 
+        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Saving results to: not_following.txt")
+
         # Write the lists to the file within the src directory
         with open("not_following.txt", 'w') as file:
             file.write(f"Users not following you: Count - {len(not_following_you)}\n")
+            file.write("------------------------------------------------------------\n")
             file.write("\n".join(not_following_you))
-            file.write(f"\n\nUsers you are not following: Count - {len(not_following)}\n")
+            file.write("\n------------------------------------------------------------")
+            file.write(f"\n\n\nUsers you are not following: Count - {len(not_following)}\n")
+            file.write("------------------------------------------------------------\n")
             file.write("\n".join(not_following))
-        
+            file.write("\n------------------------------------------------------------\n")
+
 
     except Exception as e:
         # Handle exceptions here, you can print the error or perform specific actions

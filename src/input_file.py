@@ -1,4 +1,4 @@
-connection_url = "http://localhost:4444"
+connection_url = ""
 
 username = ""
 password = ""
