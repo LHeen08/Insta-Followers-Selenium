@@ -8,7 +8,7 @@ Instagram bot, using selenium, that checks users who don't follow you back, and 
 |:---------------------------|
 |1. This is not recommended to be used when you have A LOT of followers. It is very slow as followers increase because of selenium scraping all followers.|
 |2. This will not work with two factor authentication enabled, it must be disabled to allow sign in.|
-|3. I advise to not use this repeatedly, as too many sign in attempts will not allow you to sign in and will be shown a "Please wait a few minutes before you try to login again"|
+|3. I advise to not use this repeatedly, as too many sign in attempts will not allow you to sign in and will be shown a "Please wait a few minutes before you try to login again". Your IP made too many requests and they are now blocking your IP.|
 <br />
 
 ##### :exclamation::exclamation::exclamation:I am not responsible for any damages. Use at your own risk. Look through the code if you feel uneasy or don't use it...
